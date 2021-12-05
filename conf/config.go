@@ -22,7 +22,7 @@ type Config struct {
 func DefaultConfig() *Config {
 	return &Config{
 		Address: "0.0.0.0",
-		Port:    5244,
+		Port:    $POTR,
 		Database: Database{
 			Type:        "sqlite3",
 			Port:        0,
