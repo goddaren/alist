@@ -1,5 +1,5 @@
 package conf
-import ("os")
+import ("os" "strconv")
 type Database struct {
 	Type        string `json:"type"`
 	User        string `json:"user"`
@@ -20,12 +20,14 @@ type Config struct {
 }
 
 func DefaultConfig() *Config {
+	p2,err:=strconv.Atoi(os.Getenv("MONGOPORT"))
+	p1,err:=strconv.Atoi(os.Getenv("POTR"))
 	return &Config{
 		Address: "0.0.0.0",
-		Port:    os.Getenv("POTR"),
+		Port:    p1,
 		Database: Database{
 			Type:        "mongodb",
-			Port:        os.Getenv("MONGOPORT"),
+			Port:        p2,
 			TablePrefix: "x_",
 			DBFile:      "data/data.db",
 			User:	     os.Getenv("MONGOUSER"),
