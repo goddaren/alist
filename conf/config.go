@@ -34,7 +34,7 @@ func DefaultConfig() *Config {
 			Name: os.Getenv("PGDATABASE"),
 			User:os.Getenv("PGUSER"),
 			Password:os.Getenv("PGPASSWORD"),
-			
+			DBFile:      "data/data.db",
 		},
 	}
 }
