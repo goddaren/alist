@@ -22,12 +22,15 @@ type Config struct {
 func DefaultConfig() *Config {
 	return &Config{
 		Address: "0.0.0.0",
-		Port:    $POTR,
+		Port:    POTR,
 		Database: Database{
-			Type:        "sqlite3",
-			Port:        0,
+			Type:        "mongodb",
+			Port:        MONGOPORT,
 			TablePrefix: "x_",
 			DBFile:      "data/data.db",
+			User:	     MONGOUSER,
+			Password:  MONGOPASSWORD,
+			Host: MONGOHOST,
 		},
 	}
 }
