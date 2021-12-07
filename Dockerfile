@@ -12,3 +12,4 @@ WORKDIR /opt/alist/
 COPY --from=builder /app/bin/alist ./
 EXPOSE PORT
 CMD [ "./alist" ]
+
