@@ -1,4 +1,5 @@
 package conf
+package os
 
 type Database struct {
 	Type        string `json:"type"`
@@ -22,15 +23,15 @@ type Config struct {
 func DefaultConfig() *Config {
 	return &Config{
 		Address: "0.0.0.0",
-		Port:    POTR,
+		Port:    os.Getenv("POTR"),
 		Database: Database{
 			Type:        "mongodb",
-			Port:        MONGOPORT,
+			Port:        os.Getenv("MONGOPORT"),
 			TablePrefix: "x_",
 			DBFile:      "data/data.db",
-			User:	     MONGOUSER,
-			Password:  MONGOPASSWORD,
-			Host: MONGOHOST,
+			User:	     os.Getenv("MONGOUSER"),
+			Password:  os.Getenv("MONGOPASSWORD"),
+			Host: os.Getenv("MONGOHOST"),
 		},
 	}
 }
