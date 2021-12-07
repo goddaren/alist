@@ -10,5 +10,5 @@ LABEL MAINTAINER="i@nn.ci"
 VOLUME /opt/alist/data/
 WORKDIR /opt/alist/
 COPY --from=builder /app/bin/alist ./
-EXPOSE $PORT
+EXPOSE PORT
 CMD [ "./alist" ]
