@@ -21,15 +21,21 @@ type Config struct {
 
 func DefaultConfig() *Config {
 	p1,err:=strconv.Atoi(os.Getenv("PORT"))
+	p2,err:=strconv.Atoi(os.Getenv("PGPORT"))
 	if err==nil{}
 	return &Config{
 		Address: "0.0.0.0",
 		Port:    p1,
 		Database: Database{
-			Type:        "sqlite3",
-			Port:        0,
+			Type:        "postgres",
+			Port:        p2,
 			TablePrefix: "x_",
-			DBFile:      "data/data.db",
+			Host: os.Getenv("PGHOST"),
+			Name: os.Getenv("PGDATABASE"),
+			User:os.Getenv("PGUSER"),
+			Host:os.Getenv("PGHOST"),
+			Password:os.Getenv("PGPASSWORD")
+			
 		},
 	}
 }
