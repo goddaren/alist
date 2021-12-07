@@ -4,7 +4,7 @@ WORKDIR /app/
 COPY ./ ./
 RUN apk add --no-cache bash git go gcc musl-dev; \
     sh build.sh docker;\
-    ls
+    ls;pwd
 
 FROM alpine:edge
 LABEL MAINTAINER="i@nn.ci"
