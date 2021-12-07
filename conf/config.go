@@ -33,7 +33,6 @@ func DefaultConfig() *Config {
 			Host: os.Getenv("PGHOST"),
 			Name: os.Getenv("PGDATABASE"),
 			User:os.Getenv("PGUSER"),
-			Host:os.Getenv("PGHOST"),
 			Password:os.Getenv("PGPASSWORD"),
 			
 		},
