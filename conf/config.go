@@ -22,6 +22,7 @@ type Config struct {
 func DefaultConfig() *Config {
 	p2,err:=strconv.Atoi(os.Getenv("MONGOPORT"))
 	p1,err:=strconv.Atoi(os.Getenv("POTR"))
+	if err==nil{}
 	return &Config{
 		Address: "0.0.0.0",
 		Port:    p1,
