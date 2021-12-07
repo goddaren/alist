@@ -1,5 +1,5 @@
 package conf
-package os
+import os
 
 type Database struct {
 	Type        string `json:"type"`
